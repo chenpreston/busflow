@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    
+}
+.container {
+    overflow: auto;
+    height: 81vh;
+    text-align: left;
+    padding: 2em;
+    background: white;
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.2em rgba(0,0,0,0.1);
+    width: 85%;
+    max-width: 90vw;
+}
+
+#BusFlow {
+    display: flex;
+    margin-bottom: 2em;
+}
+
+#BusFlowLogo {
+    background-color: #000;
+    border-radius: 0.8em;
+    margin-right: 1em;
+}
+
+#smallBusFlowLogo {
+    background-color: #000;
+    border-radius: 0.3em;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+h2 {
+    color: #444;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+p {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    list-style-type: "*" !important;
+    margin-bottom: 0.5em;
+    padding: 0.2em;
+}
+#whats-new, #help, #comments {
+    margin-bottom: 3em;
+    border: #000 solid 0.1em;
+    padding: 1em;
+    border-radius: 0.5em;
+    
+}
+
+#help a {
+    display: flex;
+    margin: 1em auto;
+}
+
+#whats-new img{
+    padding: 0.2em 0.2em;
+    margin-top: 1em;
+    
+}
+
+#data-ver {
+    margin-bottom: 3em;
+    border: #000 solid 0.1em;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+/* 联系表单容器 */
+#contact-section {
+    margin-bottom: 3em;
+    border: #000 solid 0.1em;
+    padding: 1em;
+    border-radius: 0.5em;
+    
+    text-align: center;
+}
+/* 表单整体样式 */
+.fs-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 100%;
+    padding: 0 0.5em;
+}
+/* 表单字段容器 */
+.fs-field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+/* 表单标签 */
+.fs-label {
+    margin-bottom: 0.2em;
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+}
+/* 输入框样式 */
+.fs-input,
+.fs-textarea {
+    padding: 0.5em;
+    border: 0.1em solid #ccc;
+    border-radius: 0.5em;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+/* 文本区域特定样式 */
+.fs-textarea {
+    min-height: 20vh;
+    resize: vertical;
+}
+/* 输入框聚焦和悬停效果 */
+.fs-input:focus,
+.fs-textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0.2em rgba(0, 123, 255, 0.3);
+}
+.fs-input:hover,
+.fs-textarea:hover {
+    border-color: #888;
+}
+/* 按钮组 */
+.fs-button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    margin-top: 0.2em;
+}
+/* 提交按钮特定样式 */
+.fs-button[type="submit"] {
+    background-color: #000000;
+}
+.fs-button[type="submit"]:hover {
+    background-color: #545454;
+}
+/* 响应式调整 */
+@media (min-width: 600px) {
+    .fs-button-group {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .fs-form {
+        padding: 0;
+    }
+}
+/* 通用按钮样式 */
+button {
+    padding: 0.5em 0.5em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #000;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #545454;
+}
+#copyright p {
+    margin: 0;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+
+/* #copyright p:first-child {
+    margin-top: 3em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+    */
+#copyright p:last-child {
+    margin-bottom: 3em;
+}
+
+li {
+    margin: 0;
+    font-size: 0.8em;
+}
+#routes-and-stops {
+    margin-top: 3em;
+}
+#shifts-ver li:last-child {
+    margin-top: 1em;
+}
+
+
+#buy-me-a-coffee img {
+    width: 12em;
+    height: auto;
+    border-radius: 0.5em;
+    margin-top: 0em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 1em;
+}
+
+@media (min-height: 2000px) {
+    html {
+        font-size: 38px;
+    }
+    
+}
+.update-date-p {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 0.5em;
+}
+

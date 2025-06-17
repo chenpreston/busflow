@@ -1,0 +1,178 @@
+<!-- @license
+BusFlow
+https://github.com/chenpreston/shift-helper-pwa
+License: MIT
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description"
+        content="BusFlow is a Progressive Web App (PWA) that helps drivers to manage their work shifts, routes, and counting tasks." />
+    <meta name="keywords"
+        content="driver, helper, shift, route, counting, task, management, progressive, web, app, pwa" />
+    <meta name="author" content="Preston Chen" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png" />
+    <title>BusFlow</title>
+    <link rel="manifest" href="manifest.json" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 1.5em;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: #000;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            padding-top: 0.5em;
+            padding-bottom: 1.2em;
+            display: flex;
+            justify-content: space-around;
+            height: 10vh;
+        }
+
+        .navbar a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #888;
+            text-align: center;
+            padding: 0;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s, transform 0.3s;
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .content {
+            flex: 1;
+            overflow: auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .navbar-btn {
+            float: top;
+        }
+
+        @media (min-height: 1080px) {
+    
+    .navbar {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    .navbar a {
+        font-size: 2.2em;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- iframe 内容区域 -->
+    <div class="content">
+        <iframe id="contentFrame" src="/shift-helper/index.html"></iframe>
+    </div>
+
+    <!-- 导航条 -->
+    <div class="navbar">
+        <a onclick="document.getElementById('contentFrame').src='/shift-helper/index.html'; setActive(this)"><img
+                class="navbar-btn" src="./assets/icons/calendar.svg"><span>Shift</span></a>
+        <a onclick="document.getElementById('contentFrame').src='/route-helper/index.html'; setActive(this)"><img
+                class="navbar-btn" src="./assets/icons/route.svg"><span>Route</span></a>
+        <a onclick="document.getElementById('contentFrame').src='/counting-helper/index.html'; setActive(this)"><img
+                class="navbar-btn" src="./assets/icons/child.svg"><span>Count</span></a>
+        <a onclick="document.getElementById('contentFrame').src='/cash-helper/index.html'; setActive(this)"><img
+                class="navbar-btn" src="./assets/icons/coins.svg"><span>Cash</span></a>
+        <a onclick="document.getElementById('contentFrame').src='/about/index.html'; setActive(this)"><img
+                class="navbar-btn" src="./assets/icons/info.svg"><span>About</span></a>
+    </div>
+    <script>
+        // Service Worker 注册
+        if ("serviceWorker" in navigator) {
+
+            navigator.serviceWorker
+                .register("./service-worker.js")
+                .then((registration) => {
+
+                    registration.addEventListener("updatefound", () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener("statechange", () => {
+                            if (
+                                newWorker.state === "installed" &&
+                                navigator.serviceWorker.controller
+                            ) {
+
+                               {
+                                    newWorker.postMessage({ action: "skipWaiting" });
+                                }
+                            }
+                        });
+                    });
+                })
+                .catch((err) =>
+                    console.error(
+                        "driver helper: Service Worker registration failed:",
+                        err
+                    )
+                );
+
+            navigator.serviceWorker.addEventListener("controllerchange", () => {
+
+                window.location.reload();
+            });
+
+            navigator.serviceWorker.addEventListener("message", (event) => {
+                if (event.data && event.data.action === "skipWaiting") {
+
+                }
+            });
+        }
+
+        function setActive(element) {
+            document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

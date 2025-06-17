@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./styles.css">
+    <title>About Page</title>
+    <style>
+        #whats-new li img {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div id="BusFlow">
+            <img id="BusFlowLogo" src="./svgs/driver.svg" width="80">
+        <h1>BusFlow</h1>
+    </div>
+    <img src="./svgs/car.svg" width="50">
+    <div id="help">
+<h2>
+    How to install?
+</h2>
+<img src="./svgs/android.svg" width="20"><a href="/about/androidguide.pdf" target="_blank">Android Phone</a>
+<img src="./svgs/apple.svg" width="20"><a href="/about/iphoneguide.pdf" target="_blank">Apple iPhone</a>
+    </div>
+        <img src="./svgs/truck-pickup.svg" width="50">
+        <div id="whats-new">
+            <h2>What's new?</h2>
+            <ul>
+              <!--  <img id="smallBusFlowLogo" src="./svgs/driver.svg" width="20">
+                <li>Removed Google Analytics codes.</li>
+                <li>Removed all update confirmation.</li>
+                <li>Now use Font Awesome icons as buttons in the navigation bar.</li>
+                <li>New app icon. (Delete and reinstall BusFlow if you don't see the "BF" new icon.)</li>
+                <li>CSS now uses relative units.</li>
+<li>Adapted for devices with DPR=1. (For Hajime)</li>
+<li>Fixed the app name after PWA installation.</li>
+            </ul> -->
+            <ul>
+                <img src="./svgs/shift.svg" width="20">
+                <p class="update-date-p">01-05-2025</p>
+                <li>The school term weekdays and weekends shift database has been updated to April 28th, 2025.</li>
+            </ul>
+            <ul>
+                <img src="./svgs/route.svg" width="20">
+                <p class="update-date-p">01-05-2025</p>
+                <li>Add a map layer that displays all the bus stops in the Bay of Plenty, turned off by default.</li>
+                <li>Remove the previous school bus route search bar. Now, merge it into a single search bar and add a button to clear the content within the search bar.</li>
+                <li>Now it's possible to search all Bay of Plenty bus routes.</li>
+                <li>The route database has been updated to April 28th, 2025.</li>
+            </ul>
+            <ul>
+            <!--    <img src="./svgs/counting.svg" width="20">
+                <li>Add a new feature called "Count Helper" to record the number of school bus students.</li>
+            </ul> -->
+            <ul> 
+                <img src="./svgs/coins.svg" width="20">
+                <p class="update-date-p">10-05-2025</p>
+                <li>Other top-up amounts can be less than 5 and can be negative numbers.</li>
+            </ul>
+          <!--  <ul>
+                <img src="./svgs/about.svg" width="20">
+                <li>Adjust the layout of the About page.</li>
+                <li>shields.io badges removed.</li>
+                <li>New "How to install?" Section.</li>
+                <li>Add 2 PDF files for installation guide.</li>
+                <li>Add a Comment function.</li>
+            </ul> -->
+        </div>
+       
+        <img src="./svgs/truck.svg" width="50">
+        <div id="data-ver">
+        <h2>Data version</h2>
+        
+        <ul>
+            <fieldset>
+                <legend>SHIFTS</legend>
+                <ul id="shifts-ver">
+                    <li><strong>School Term:</strong> WD_Apr25V2-78 (DataSet 4987)</li>
+                    <li><strong>School Holidays:</strong> TN_SH_Mar24e-1 (DataSet 4896)</li>
+                    <li><strong>Weekend:</strong>  WN_Apr25V2x-51 (DataSet 4987)</li>
+                    <li>If the last part of the footer on the company's shift card differs from the version number
+                        above, the shift database needs an update.</li>
+                </ul>
+            </fieldset>
+            <fieldset id="routes-and-stops">
+                <legend>ROUTES & STOPS:</legend>
+                <ul>
+                    <li><a href="https://www.baybus.co.nz/help-and-contact/general-transit-feed-specification/"
+                            target="_blank">GTFS File April 2025</a>
+                        <<==Click this link to check the file's date on the new page. If it’s different, an update is
+                            needed.</li>
+                </ul>
+            </fieldset>
+        </ul>
+</div>
+<img src="./svgs/van.svg" width="50">
+        <section id="contact-section">
+            <h2>Feedback Form</h2>
+            <form action="https://formspree.io/f/mjkybokv" class="fs-form" target="_top" method="POST">
+                <div class="fs-field">
+                    <label class="fs-label" for="email">Email</label>
+                    <input class="fs-input" id="email" name="email" required />
+                </div>
+                <div class="fs-field">
+                    <label class="fs-label" for="message">Message</label>
+                    <textarea class="fs-textarea" id="message" name="message"></textarea>
+                </div>
+                <div class="fs-button-group">
+                    <button class="fs-button" type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+<img src="./svgs/bus.svg" width="50">
+        <div id="comments">
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://busflow.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>    
+        </div>
+
+        <section id="copyright">
+            <!-- <p>Like it?</p> -->
+            <p>© 2025 <a href="https://github.com/chenpreston" target="_blank">Preston</a> - <a href="https://opensource.org/license/mit" target="_blank">MIT license</a></p>
+            <p>Bus emoji designed by <a href="https://openmoji.org/" target="_blank">OpenMoji</a> - License: <a
+                    href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a></p>
+                    <p>Icons designed by <a href="https://fontawesome.com/" target="_blank">Fonts Awesome</a> - License: <a
+                        href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
+        </section>
+    </div>
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

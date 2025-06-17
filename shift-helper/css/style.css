@@ -1,0 +1,327 @@
+/* 全局样式 */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: sans-serif;
+height: 88vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 59vh;
+  background-color: #f4f7f9;
+}
+
+#sofaIcon {
+  width: 1.2em;
+}
+
+/* 通用容器 */
+#depot-selection-container {
+  width: 100%;
+  max-width: 90vw;
+  padding: 15vh 5vw;
+  background-color: #fff;
+  border-radius: 1em;
+  box-shadow: 0.2em 0.2em 0.1em rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 59vh;
+}
+
+/* 头部样式 */
+header {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 1.5em; /* 修复：10 单位不明确，改为相对单位 */
+  font-weight: bold;
+  color: #333;
+}
+
+/* #version {
+  
+  padding: 0;
+  
+  margin-bottom: 0;
+  
+} */
+
+/*
+ #depot-prompt p {
+  margin: 0;
+  font-size: 0.5em;
+  color: #555;
+}
+
+#depot-prompt p:last-child {
+  margin-bottom: 20px;
+}
+
+/* Switch 开关样式 */
+#school-holiday-setting {
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 4em;
+}
+
+#school-holiday-setting label[for="school-holiday-switch"] {
+  
+  margin-top: 0.1em;
+  margin-right: 1em;
+  color: #333;
+  font-size: 1em;
+}
+
+#tip-top {
+  
+  font-size: 1.2em;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.2em;
+  height: 1.7em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 2em;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  left: 0.25em;
+  bottom: 0.25em;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 0.1em #000;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.5em);
+}
+
+/* 按钮容器 */
+#depot-buttons,
+#drive-shifts,
+#standby-shifts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+/* 通用按钮样式 */
+button {
+  padding: 0.6em 0.8em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: #000;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #000;
+}
+
+/* 特定按钮样式 */
+#back-to-depot-selection,
+#back-to-date-selector-button,
+#back-to-depot-from-about,
+#back-to-depot-selection-from-form {
+  background-color: #999;
+}
+
+#back-to-depot-selection:hover,
+#back-to-date-selector-button:hover,
+#back-to-depot-from-about:hover,
+#back-to-depot-selection-from-form:hover {
+  background-color: #666;
+}
+
+/* 日期选择器 */
+#week-date-selector {
+  margin-top: 1.8em;
+  text-align: center;
+}
+
+#week-date-selector p {
+  margin-bottom: 1em;
+  color: #555;
+}
+
+#week-date-selector input[type="date"] {
+  padding: 0.5em;
+  border: 0.1em solid #ccc;
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+/* 日程表视图 */
+#schedule-week-view {
+  margin-top: 1em;
+  text-align: center;
+}
+
+#schedule-week-view h2 {
+  margin-bottom: 1em;
+  color: #555;
+  font-size: 1.1em;
+  font-weight: normal;
+}
+
+#schedule-table-view-container {
+  overflow-x: auto;
+}
+
+#schedule-week-view table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 0.1em solid #ccc;
+  margin-bottom: 2em;
+}
+
+#schedule-week-view th,
+#schedule-week-view td {
+  border: 0.1em solid #ccc;
+  padding: 0.1em;
+  text-align: center;
+}
+
+#schedule-week-view th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #777;
+}
+
+#schedule-week-view thead th[colspan="7"] {
+  font-size: 1em;
+  color: #333;
+}
+
+#schedule-week-view tbody th {
+  text-align: left;
+  font-weight: normal;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+#schedule-week-view tbody td {
+  padding: 0.5em;
+}
+
+#schedule-week-view tbody td .switch {
+  margin: 0 auto;
+  display: block;
+}
+
+/* 下拉菜单 */
+#schedule-week-view tbody td select.shift-selector {
+  width: 100%;
+  padding: 0.3em 0.3em 0.5em 0.5em;
+  border: 0.1em solid #ccc;
+  border-radius: 0.5em;
+  font-size: 0.9em;
+  background: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>")
+    no-repeat right 0.5em center;
+  appearance: none;
+}
+
+#schedule-week-view tbody td select.shift-selector:hover,
+#schedule-week-view tbody td select.shift-selector:focus {
+  border-color: #888;
+  outline: none;
+  box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.15);
+}
+
+/*
+#contact-about-buttons {
+  margin-top: 40px;
+  text-align: center;
+}
+
+#contact-button {
+  width: 70%;
+}
+
+/* 其他元素 */
+legend {
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #333;
+}
+
+tr.highlight {
+  background-color: #007bff81;
+}
+
+#control-row td {
+  padding: 1em;
+}
+
+#toggle-weekdays,
+#reset-shifts,
+#reset-holidays {
+  padding: 0.5em 0.5em;
+  margin: 0 0.1em;
+}
+
+#schedule-week-view tbody td select.shift-selector:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media (max-height: 667px) {
+  #depot-selection-container {
+    padding: 5px;
+    height: 84vh;
+  }
+  
+}
+
+@media (min-height: 2000px) {
+  html {
+    font-size: 40px;
+  }
+  #depot-selection-container {
+    margin-top: 0.5em;
+    height: 88vh;
+    padding: 5em 0.5em;
+  }
+
+  
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cash Helper</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 1em;
+            max-height: 80vh;
+        }
+
+        button {
+            display: inline-block;
+            padding: 0.5em;
+            margin: 0;
+            border: none;
+            border-radius: 0.5em;
+            font-size: 1em;
+            cursor: pointer;
+
+        }
+
+        .ticket-button {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            background-color: #4caf50;
+            color: white;
+            width: 40vw;
+            font-weight: bold;
+        }
+
+        .delete-button {
+            background-color: transparent;
+
+        }
+
+        .save-button,
+        .view-button {
+            background-color: #2196f3;
+            color: white;
+            display: block;
+            margin: 1em auto;
+            width: 40vw;
+        }
+
+        .back-button {
+            background-color: #2196f3;
+            color: white;
+            display: block;
+            margin: 1em auto;
+            width: 80%;
+        }
+
+        .record {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 0;
+            margin-bottom: 0.2em;
+            border-radius: 0.5em;
+            box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.1);
+            font-size: 1em;
+
+        }
+
+        .daily-record {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 0.5em;
+            margin-bottom: 0.2em;
+            border-radius: 0.5em;
+            box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.1);
+        }
+
+        #dailyRecords {
+            height: 80vh;
+            overflow-y: auto;
+        }
+
+
+        #totalAmount {
+            text-align: center;
+            margin-top: 1em;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+
+        fieldset {
+            border: 0.1em solid #ccc;
+            border-radius: 0.5em;
+            padding: 1em;
+            margin-bottom: 0.2em;
+        }
+
+        legend {
+            padding: 0 0.5em;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #records {
+            max-height: 32vh;
+            overflow-y: auto;
+        }
+
+        .top-up-button {
+            width: 20vw;
+
+        }
+
+        @media (max-height: 667px) {
+            fieldset {
+                margin: 0;
+            }
+
+            #records {
+                max-height: 20vh;
+            }
+
+            button {
+                margin: 0;
+                padding: 5px 10px;
+            }
+            #dailyRecords {
+                height: 75vh;
+            }
+        }
+        @media (min-height: 2000px) {
+            html {
+                font-size: 38px;
+            }
+            #records {
+                max-height: 40vh;
+            }
+            
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100vw);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .record.new {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset class="fieldset">
+        <legend>Adult</legend>
+        <div class="button-container">
+            <button class="ticket-button" onclick="addRecord('adult', 3.4)">Adult $3.4</button>
+            <button class="ticket-button" onclick="addRecord('adult daysaver', 7.8)">Daysaver $7.8</button>
+        </div>
+    </fieldset>
+    <fieldset class="fieldset">
+        <legend>Child</legend>
+        <div class="button-container">
+            <button class="ticket-button" onclick="addRecord('child', 2)">Child $2</button>
+            <button class="ticket-button" onclick="addRecord('child daysaver', 5.6)">Daysaver $5.6</button>
+        </div>
+    </fieldset>
+    <fieldset class="fieldset">
+        <legend>Te Puke</legend>
+        <div class="button-container">
+            <button class="ticket-button" onclick="addRecord('adult te puke', 5.7)">Adult $5.7</button>
+            <button class="ticket-button" onclick="addRecord('child te puke', 3.4)">Child $3.4</button>
+        </div>
+    </fieldset>
+    <fieldset class="fieldset">
+        <legend>Top Up</legend>
+        <div class="button-container">
+            <button class="ticket-button top-up-button" onclick="topUpAmount(5)">$5</button>
+            <button class="ticket-button top-up-button" onclick="topUpAmount(10)">$10</button>
+            <button class="ticket-button top-up-button" onclick="topUpAmount(20)">$20</button>
+            <button class="ticket-button top-up-button" onclick="topUp()">Other</button>
+        </div>
+    </fieldset>
+    <div id="totalAmount">Total Amount: $0.00</div>
+    <div class="button-container">
+        <button class="save-button" onclick="saveDailyRecord()">Save Record</button>
+        <button class="view-button" onclick="viewDailyRecords()">View Records</button>
+    </div>
+    <div id="records"></div>
+    <div id="dailyRecords" style="display: none;"></div>
+    <button class="back-button" style="display: none;" onclick="backToMain()">Back</button>
+    <script>
+        function addRecord(type, amount) {
+            const timestamp = new Date().toLocaleString("en", {
+                month: "short",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false
+            });
+            const record = document.createElement('div');
+            record.className = 'record new'; // 添加 'new' 类
+            record.innerHTML = `${timestamp} - ${type}: $${amount.toFixed(2)} <button class="delete-button" onclick="deleteRecord(this)"><img src="./delete.svg" width="25"></button>`;
+            const recordsContainer = document.getElementById('records');
+            recordsContainer.insertBefore(record, recordsContainer.firstChild);
+
+            // 在动画结束后移除 'new' 类
+            setTimeout(() => {
+                record.classList.remove('new');
+            }, 500); // 500ms 与动画时间匹配
+
+            updateTotalAmount();
+            saveRecords();
+        }
+
+        function topUpAmount(amount) {
+            addRecord('Top Up', amount);
+        }
+
+        function topUp() {
+            let amount = parseFloat(prompt("Enter top-up amount (can be negative):"));
+            if (isNaN(amount)) {
+                alert("Invalid amount.");
+                return;
+            }
+            addRecord('Top Up', amount);
+        }
+
+        function deleteRecord(button) {
+            button.parentElement.remove();
+            updateTotalAmount();
+            saveRecords();
+        }
+
+        function saveRecords() {
+            const records = [];
+            document.querySelectorAll('#records .record').forEach(record => {
+                records.push(record.innerHTML);
+            });
+            localStorage.setItem('records', JSON.stringify(records));
+        }
+
+        function loadRecords() {
+            const records = JSON.parse(localStorage.getItem('records') || '[]');
+            records.forEach(recordHTML => {
+                const record = document.createElement('div');
+                record.className = 'record';
+                record.innerHTML = recordHTML;
+                document.getElementById('records').appendChild(record);
+            });
+            updateTotalAmount();
+        }
+
+        function saveDailyRecord() {
+            const totalAmount = parseFloat(document.getElementById('totalAmount').innerText.match(/\$([0-9.]+)/)[1]);
+            const dailyRecord = {
+                date: new Date().toLocaleString("en", {
+                    year: "numeric",
+                    month: "short",
+                    day: "2-digit",
+                }),
+                totalAmount: totalAmount || 0
+            };
+            const dailyRecords = JSON.parse(localStorage.getItem('dailyRecords') || '[]');
+            dailyRecords.push(dailyRecord);
+            localStorage.setItem('dailyRecords', JSON.stringify(dailyRecords));
+            displayDailyRecords();
+            clearCurrentRecords();
+        }
+
+        function updateTotalAmount() {
+            let total = 0;
+            document.querySelectorAll('#records .record').forEach(record => {
+                const amount = parseFloat(record.innerHTML.match(/\$(-?[0-9.]+)/)[1]);
+                total += amount;
+            });
+            document.getElementById('totalAmount').innerText = `Total Amount: $${total.toFixed(2)}`;
+        }
+
+        function displayDailyRecords() {
+            const dailyRecords = JSON.parse(localStorage.getItem('dailyRecords') || '[]');
+            const dailyRecordsDiv = document.getElementById('dailyRecords');
+            dailyRecordsDiv.innerHTML = '';
+            dailyRecords.forEach((dailyRecord, index) => {
+                const recordDiv = document.createElement('div');
+                recordDiv.className = 'daily-record';
+                recordDiv.innerHTML = `<strong>${dailyRecord.date}:</strong>$${dailyRecord.totalAmount.toFixed(2)} <button class="delete-button" onclick="deleteDailyRecord(${index})"><img src="./delete.svg" width="25"></button>`;
+                dailyRecordsDiv.appendChild(recordDiv);
+            });
+        }
+
+        function deleteDailyRecord(index) {
+            const dailyRecords = JSON.parse(localStorage.getItem('dailyRecords') || '[]');
+            dailyRecords.splice(index, 1);
+            localStorage.setItem('dailyRecords', JSON.stringify(dailyRecords));
+            displayDailyRecords();
+        }
+
+        function clearCurrentRecords() {
+            document.getElementById('records').innerHTML = '';
+            document.getElementById('totalAmount').innerText = 'Total Amount: $0.00';
+            localStorage.removeItem('records');
+        }
+
+        function viewDailyRecords() {
+            document.querySelectorAll('.fieldset').forEach(fieldset => fieldset.style.display = 'none');
+            document.querySelector('.save-button').style.display = 'none';
+            document.querySelector('.view-button').style.display = 'none';
+            document.querySelector('.top-up-button').style.display = 'none';
+            document.getElementById('records').style.display = 'none';
+            document.getElementById('totalAmount').style.display = 'none';
+            document.getElementById('dailyRecords').style.display = 'block';
+            document.querySelector('.back-button').style.display = 'block';
+            displayDailyRecords();
+        }
+
+        function backToMain() {
+            document.querySelectorAll('.fieldset').forEach(fieldset => fieldset.style.display = 'block');
+            document.querySelector('.save-button').style.display = 'block';
+            document.querySelector('.view-button').style.display = 'block';
+            document.querySelector('.top-up-button').style.display = 'block';
+            document.getElementById('records').style.display = 'block';
+            document.getElementById('totalAmount').style.display = 'block';
+            document.getElementById('dailyRecords').style.display = 'none';
+            document.querySelector('.back-button').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+    loadRecords();
+    displayDailyRecords();
+});
+    </script>
+    <script>
+        // Service Worker 注册
+        if ("serviceWorker" in navigator) {
+
+            navigator.serviceWorker
+                .register("./service-worker.js")
+                .then((registration) => {
+
+                    registration.addEventListener("updatefound", () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener("statechange", () => {
+                            if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+
+                             {
+                                    newWorker.postMessage({ action: "skipWaiting" });
+                                }
+                            }
+                        });
+                    });
+                })
+                .catch((err) => console.error("CASH helper: Service Worker registration failed:", err));
+
+            navigator.serviceWorker.addEventListener("controllerchange", () => {
+
+                window.location.reload();
+            });
+
+            navigator.serviceWorker.addEventListener("message", (event) => {
+                if (event.data && event.data.action === "skipWaiting") {
+
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

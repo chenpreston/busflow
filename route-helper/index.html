@@ -1,0 +1,120 @@
+<!-- @license
+ROUTE Helper
+https://github.com/chenpreston/route-helper
+License: MIT
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ROUTE Helper</title>
+    <link rel="stylesheet" href="./leaflet.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="route-select">
+      <div class="route-select-container" id="urban-container">
+        <input id="route-input-urban" placeholder="Input SP number. eg.2401">
+        <button id="clear-route-input-urban" class="clear-button">Clear</button>
+        <ul id="route-list-urban" class="route-list"></ul>
+      </div>
+<!--      <div class="route-select-container" id="school-container">
+        <input type="number" id="route-input-school" placeholder="Input school route">
+        <ul id="route-list-school" class="route-list"></ul>
+      </div> -->
+      </div> 
+    
+
+    <div id="map"></div>
+    <div id="controls">
+      <button id="replay">
+        <img id="replay-svg" class="play-btn" src="./images/backward-step-solid.svg">
+      </button>
+      <button id="backward">
+        <img id="backward-svg" class="play-btn" src="./images/backward-solid.svg">
+      </button>
+      <button id="play">
+        <img id="play-svg" class="play-btn" src="./images/play-solid.svg">
+      </button>
+      <button id="pause">
+        <img id="pause-svg" class="play-btn" src="./images/pause-solid.svg">
+      </button>
+      <button id="forward">
+        <img id="forward-svg" class="play-btn" src="./images/forward-solid.svg">
+      </button>
+      <img id="x-svg" class="play-btn" src="./images/x.svg">
+      <button id="X">
+        <img id="123-svg" class="play-btn" src="./images/1.svg">
+      </button>
+    </div>
+    <div id="progress-container">
+      <input type="range" id="progress" min="0" value="0" step="1" />
+    </div>
+    <script>
+      // Service Worker 注册
+      if ("serviceWorker" in navigator) {
+       
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .then((registration) => {
+           
+            registration.addEventListener("updatefound", () => {
+              const newWorker = registration.installing;
+              newWorker.addEventListener("statechange", () => {
+                if (
+                  newWorker.state === "installed" &&
+                  navigator.serviceWorker.controller
+                ) {
+                 
+                   {
+                    newWorker.postMessage({ action: "skipWaiting" });
+                  }
+                }
+              });
+            });
+          })
+          .catch((err) =>
+            console.error(
+              "route helper: Service Worker registration failed:",
+              err
+            )
+          );
+
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          
+          window.location.reload();
+        });
+
+        navigator.serviceWorker.addEventListener("message", (event) => {
+          if (event.data && event.data.action === "skipWaiting") {
+           
+          }
+        });
+      }
+
+      // 设置默认播放速度延迟
+      const defaultDelay = 200;
+
+      // 播放速度切换逻辑
+      const speedButton = document.getElementById('X');
+      let speedState = 1;
+      const speedIcons = ['./images/1.svg', './images/2.svg', './images/3.svg'];
+
+      speedButton.addEventListener('click', () => {
+        speedState = (speedState % 3) + 1;
+        speedButton.querySelector('img').src = speedIcons[speedState - 1];
+        // 根据 speedState 设置播放速度
+        // 例如：播放速度 = defaultDelay / speedState;
+      });
+
+      document.getElementById('clear-route-input-urban').addEventListener('click', () => {
+        document.getElementById('route-input-urban').value = '';
+        document.getElementById('route-list-urban').style.display = 'none';
+      });
+
+    </script>
+    <script src="leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
