@@ -1,4 +1,4 @@
-const CACHE_NAME = "about-page-cache-v0.3.4"; // 更新缓存时修改版本号
+const CACHE_NAME = "about-page-cache-v0.3.5"; // 更新缓存时修改版本号
 const CACHE_PREFIX = CACHE_NAME.split("-v")[0]; // 提取前缀 
 const urlsToCache = [
   "/",
@@ -19,6 +19,8 @@ const urlsToCache = [
   "./svgs/apple.svg",
   "./androidguide.pdf",
   "./iphoneguide.pdf",
+  "./svgs/time.svg",
+  "./svgs/happy.svg",
 
 ];
 

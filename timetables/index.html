@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tauranga Routes and Timetables</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <script src="https://unpkg.com/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/lodash@4.17.21/lodash.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"></script>
+    <script src="https://unpkg.com/@maplibre/maplibre-gl-geocoder@1.5.0/dist/maplibre-gl-geocoder.min.js"></script>
+    <script src="js/system-map.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+    <link href="https://unpkg.com/@maplibre/maplibre-gl-geocoder@1.5.0/dist/maplibre-gl-geocoder.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/overview_styles.css">
+</head>
+
+<body>
+    <div class="timetable-overview">
+        <div class="overview-list">
+            <h1>Tauranga Routes and Timetables</h1><a
+                class="timetable-page-link" href="20250428-20260402/244500000110_ct_0_sat-sun.html"
+                data-route-ids="2445">
+                <div class="route-color-swatch-large" style="background-color: #f9a01b; color: #ffffff;">CT</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga Crossing - Bayfair
+                    </div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/244511111000_ct_0_mon-fri.html"
+                data-route-ids="2445">
+                <div class="route-color-swatch-large" style="background-color: #f9a01b; color: #ffffff;">CT</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga Crossing - Bayfair
+                    </div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/244500000111_ct_1_sat-sun.html"
+                data-route-ids="2445">
+                <div class="route-color-swatch-large" style="background-color: #f9a01b; color: #ffffff;">CT</div>
+                <div>
+                    <div class="timetable-page-label">Bayfair - Tauranga Crossing
+                    </div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/244511111001_ct_1_mon-fri.html"
+                data-route-ids="2445">
+                <div class="route-color-swatch-large" style="background-color: #f9a01b; color: #ffffff;">CT</div>
+                <div>
+                    <div class="timetable-page-label">Bayfair - Tauranga Crossing
+                    </div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240100000110_1_0_sat-sun.html"
+                data-route-ids="2401">
+                <div class="route-color-swatch-large" style="background-color: #00a04a; color: #ffffff;">1</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Pyes Pa</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240111111000_1_0_mon-fri.html"
+                data-route-ids="2401">
+                <div class="route-color-swatch-large" style="background-color: #00a04a; color: #ffffff;">1</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Pyes Pa</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2401bop00_excpetion_calendar_00_1_0_noregularservicedays.html" data-route-ids="2401">
+                <div class="route-color-swatch-large" style="background-color: #00a04a; color: #ffffff;">1</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Pyes Pa</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240100000111_1_1_sat-sun.html"
+                data-route-ids="2401">
+                <div class="route-color-swatch-large" style="background-color: #00a04a; color: #ffffff;">1</div>
+                <div>
+                    <div class="timetable-page-label">Pyes Pa - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240111111001_1_1_mon-fri.html"
+                data-route-ids="2401">
+                <div class="route-color-swatch-large" style="background-color: #00a04a; color: #ffffff;">1</div>
+                <div>
+                    <div class="timetable-page-label">Pyes Pa - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2401bop00_excpetion_calendar_01_1_1_noregularservicedays.html" data-route-ids="2401">
+                <div class="route-color-swatch-large" style="background-color: #00a04a; color: #ffffff;">1</div>
+                <div>
+                    <div class="timetable-page-label">Pyes Pa - Tauranga City</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240200000110_2_0_sat-sun.html"
+                data-route-ids="2402">
+                <div class="route-color-swatch-large" style="background-color: #ee3124; color: #ffffff;">2</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Papamoa</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240211111000_2_0_mon-fri.html"
+                data-route-ids="2402">
+                <div class="route-color-swatch-large" style="background-color: #ee3124; color: #ffffff;">2</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Papamoa</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2402bop00_excpetion_calendar_00_2_0_noregularservicedays.html" data-route-ids="2402">
+                <div class="route-color-swatch-large" style="background-color: #ee3124; color: #ffffff;">2</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Papamoa</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240200000111_2_1_sat-sun.html"
+                data-route-ids="2402">
+                <div class="route-color-swatch-large" style="background-color: #ee3124; color: #ffffff;">2</div>
+                <div>
+                    <div class="timetable-page-label">Papamoa - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240211111001_2_1_mon-fri.html"
+                data-route-ids="2402">
+                <div class="route-color-swatch-large" style="background-color: #ee3124; color: #ffffff;">2</div>
+                <div>
+                    <div class="timetable-page-label">Papamoa - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2402bop00_excpetion_calendar_01_2_1_noregularservicedays.html" data-route-ids="2402">
+                <div class="route-color-swatch-large" style="background-color: #ee3124; color: #ffffff;">2</div>
+                <div>
+                    <div class="timetable-page-label">Papamoa - Tauranga City</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240500000110_5_0_sat-sun.html"
+                data-route-ids="2405">
+                <div class="route-color-swatch-large" style="background-color: #0073b8; color: #ffffff;">5</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Bayfair</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240511111000_5_0_mon-fri.html"
+                data-route-ids="2405">
+                <div class="route-color-swatch-large" style="background-color: #0073b8; color: #ffffff;">5</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Bayfair</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2405bop00_excpetion_calendar_00_5_0_noregularservicedays.html" data-route-ids="2405">
+                <div class="route-color-swatch-large" style="background-color: #0073b8; color: #ffffff;">5</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Bayfair</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240500000111_5_1_sat-sun.html"
+                data-route-ids="2405">
+                <div class="route-color-swatch-large" style="background-color: #0073b8; color: #ffffff;">5</div>
+                <div>
+                    <div class="timetable-page-label">Bayfair - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240511111001_5_1_mon-fri.html"
+                data-route-ids="2405">
+                <div class="route-color-swatch-large" style="background-color: #0073b8; color: #ffffff;">5</div>
+                <div>
+                    <div class="timetable-page-label">Bayfair - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2405bop00_excpetion_calendar_01_5_1_noregularservicedays.html" data-route-ids="2405">
+                <div class="route-color-swatch-large" style="background-color: #0073b8; color: #ffffff;">5</div>
+                <div>
+                    <div class="timetable-page-label">Bayfair - Tauranga City</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240700000110_7_0_sat-sun.html"
+                data-route-ids="2407">
+                <div class="route-color-swatch-large" style="background-color: #296989; color: #ffffff;">7</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Matua - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/240711111000_7_0_mon-fri.html"
+                data-route-ids="2407">
+                <div class="route-color-swatch-large" style="background-color: #296989; color: #ffffff;">7</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Matua - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2407bop00_excpetion_calendar_00_7_0_noregularservicedays.html" data-route-ids="2407">
+                <div class="route-color-swatch-large" style="background-color: #296989; color: #ffffff;">7</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Matua - Tauranga City</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242000000110_20_0_sat-sun.html"
+                data-route-ids="2420">
+                <div class="route-color-swatch-large" style="background-color: #007e3d; color: #ffffff;">20</div>
+                <div>
+                    <div class="timetable-page-label">Bayfair - Te Puke</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242011111000_20_0_mon-fri.html"
+                data-route-ids="2420">
+                <div class="route-color-swatch-large" style="background-color: #007e3d; color: #ffffff;">20</div>
+                <div>
+                    <div class="timetable-page-label">Bayfair - Te Puke</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242000000111_20_1_sat-sun.html"
+                data-route-ids="2420">
+                <div class="route-color-swatch-large" style="background-color: #007e3d; color: #ffffff;">20</div>
+                <div>
+                    <div class="timetable-page-label">Te Puke - Bayfair</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242011111001_20_1_mon-fri.html"
+                data-route-ids="2420">
+                <div class="route-color-swatch-large" style="background-color: #007e3d; color: #ffffff;">20</div>
+                <div>
+                    <div class="timetable-page-label">Te Puke - Bayfair</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242100000110_21_0_sat-sun.html"
+                data-route-ids="2421">
+                <div class="route-color-swatch-large" style="background-color: #008f89; color: #ffffff;">21</div>
+                <div>
+                    <div class="timetable-page-label">Papamoa Plaza - Mt Maunganui</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242111111000_21_0_mon-fri.html"
+                data-route-ids="2421">
+                <div class="route-color-swatch-large" style="background-color: #008f89; color: #ffffff;">21</div>
+                <div>
+                    <div class="timetable-page-label">Papamoa Plaza - Mt Maunganui</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242100000111_21_1_sat-sun.html"
+                data-route-ids="2421">
+                <div class="route-color-swatch-large" style="background-color: #008f89; color: #ffffff;">21</div>
+                <div>
+                    <div class="timetable-page-label">Mt Maunganui - Papamoa Plaza</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242111111001_21_1_mon-fri.html"
+                data-route-ids="2421">
+                <div class="route-color-swatch-large" style="background-color: #008f89; color: #ffffff;">21</div>
+                <div>
+                    <div class="timetable-page-label">Mt Maunganui - Papamoa Plaza</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242200000110_22_0_sat-sun.html"
+                data-route-ids="2422">
+                <div class="route-color-swatch-large" style="background-color: #b971a4; color: #ffffff;">22</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Maungatapu</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242211111000_22_0_mon-fri.html"
+                data-route-ids="2422">
+                <div class="route-color-swatch-large" style="background-color: #b971a4; color: #ffffff;">22</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Maungatapu - Papamoa</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242200000111_22_1_sat-sun.html"
+                data-route-ids="2422">
+                <div class="route-color-swatch-large" style="background-color: #b971a4; color: #ffffff;">22</div>
+                <div>
+                    <div class="timetable-page-label">Maungatapu - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/242211111001_22_1_mon-fri.html"
+                data-route-ids="2422">
+                <div class="route-color-swatch-large" style="background-color: #b971a4; color: #ffffff;">22</div>
+                <div>
+                    <div class="timetable-page-label">Papamoa - Maungatapu - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/244000000110_40_0_sat-sun.html"
+                data-route-ids="2440">
+                <div class="route-color-swatch-large" style="background-color: #714d31; color: #ffffff;">40</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Welcome Bay</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/244011111000_40_0_mon-fri.html"
+                data-route-ids="2440">
+                <div class="route-color-swatch-large" style="background-color: #714d31; color: #ffffff;">40</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Welcome Bay</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2440bop00_excpetion_calendar_00_40_0_noregularservicedays.html" data-route-ids="2440">
+                <div class="route-color-swatch-large" style="background-color: #714d31; color: #ffffff;">40</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Welcome Bay</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/244000000111_40_1_sat-sun.html"
+                data-route-ids="2440">
+                <div class="route-color-swatch-large" style="background-color: #714d31; color: #ffffff;">40</div>
+                <div>
+                    <div class="timetable-page-label">Welcome Bay - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/244011111001_40_1_mon-fri.html"
+                data-route-ids="2440">
+                <div class="route-color-swatch-large" style="background-color: #714d31; color: #ffffff;">40</div>
+                <div>
+                    <div class="timetable-page-label">Welcome Bay - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2440bop00_excpetion_calendar_01_40_1_noregularservicedays.html" data-route-ids="2440">
+                <div class="route-color-swatch-large" style="background-color: #714d31; color: #ffffff;">40</div>
+                <div>
+                    <div class="timetable-page-label">Welcome Bay - Tauranga City</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/245211111000_52x_0_mon-fri.html"
+                data-route-ids="2452">
+                <div class="route-color-swatch-large" style="background-color: #004c1d; color: #ffffff;">52x</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Tauranga Crossing</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/245211111001_52x_1_mon-fri.html"
+                data-route-ids="2452">
+                <div class="route-color-swatch-large" style="background-color: #004c1d; color: #ffffff;">52x</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga Crossing - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/245500000110_55_0_sat-sun.html"
+                data-route-ids="2455">
+                <div class="route-color-swatch-large" style="background-color: #488eaf; color: #ffffff;">55</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Ohauiti</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/245511111000_55_0_mon-fri.html"
+                data-route-ids="2455">
+                <div class="route-color-swatch-large" style="background-color: #488eaf; color: #ffffff;">55</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Ohauiti</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2455bop00_excpetion_calendar_00_55_0_noregularservicedays.html" data-route-ids="2455">
+                <div class="route-color-swatch-large" style="background-color: #488eaf; color: #ffffff;">55</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Ohauiti</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/245500000111_55_1_sat-sun.html"
+                data-route-ids="2455">
+                <div class="route-color-swatch-large" style="background-color: #488eaf; color: #ffffff;">55</div>
+                <div>
+                    <div class="timetable-page-label">Ohauiti - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/245511111001_55_1_mon-fri.html"
+                data-route-ids="2455">
+                <div class="route-color-swatch-large" style="background-color: #488eaf; color: #ffffff;">55</div>
+                <div>
+                    <div class="timetable-page-label">Ohauiti - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2455bop00_excpetion_calendar_01_55_1_noregularservicedays.html" data-route-ids="2455">
+                <div class="route-color-swatch-large" style="background-color: #488eaf; color: #ffffff;">55</div>
+                <div>
+                    <div class="timetable-page-label">Ohauiti - Tauranga City</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/245900000110_59_0_sat-sun.html"
+                data-route-ids="2459">
+                <div class="route-color-swatch-large" style="background-color: #453b97; color: #ffffff;">59</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Greerton</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/245911111000_59_0_mon-fri.html"
+                data-route-ids="2459">
+                <div class="route-color-swatch-large" style="background-color: #453b97; color: #ffffff;">59</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Greerton</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/245900000111_59_1_sat-sun.html"
+                data-route-ids="2459">
+                <div class="route-color-swatch-large" style="background-color: #453b97; color: #ffffff;">59</div>
+                <div>
+                    <div class="timetable-page-label">Greerton - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/245911111001_59_1_mon-fri.html"
+                data-route-ids="2459">
+                <div class="route-color-swatch-large" style="background-color: #453b97; color: #ffffff;">59</div>
+                <div>
+                    <div class="timetable-page-label">Greerton - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/246000000110_60_0_sat-sun.html"
+                data-route-ids="2460">
+                <div class="route-color-swatch-large" style="background-color: #002452; color: #ffffff;">60</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Cambridge Heights</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/246011111000_60_0_mon-fri.html"
+                data-route-ids="2460">
+                <div class="route-color-swatch-large" style="background-color: #002452; color: #ffffff;">60</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Cambridge Heights</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2460bop00_excpetion_calendar_00_60_0_noregularservicedays.html" data-route-ids="2460">
+                <div class="route-color-swatch-large" style="background-color: #002452; color: #ffffff;">60</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Cambridge Heights</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/246000000111_60_1_sat-sun.html"
+                data-route-ids="2460">
+                <div class="route-color-swatch-large" style="background-color: #002452; color: #ffffff;">60</div>
+                <div>
+                    <div class="timetable-page-label">Cambridge Heights - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/246011111001_60_1_mon-fri.html"
+                data-route-ids="2460">
+                <div class="route-color-swatch-large" style="background-color: #002452; color: #ffffff;">60</div>
+                <div>
+                    <div class="timetable-page-label">Cambridge Heights - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2460bop00_excpetion_calendar_01_60_1_noregularservicedays.html" data-route-ids="2460">
+                <div class="route-color-swatch-large" style="background-color: #002452; color: #ffffff;">60</div>
+                <div>
+                    <div class="timetable-page-label">Cambridge Heights - Tauranga City</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/246200000110_62_0_sat-sun.html"
+                data-route-ids="2462">
+                <div class="route-color-swatch-large" style="background-color: #940670; color: #ffffff;">62</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Bethlehem</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/246211111000_62_0_mon-fri.html"
+                data-route-ids="2462">
+                <div class="route-color-swatch-large" style="background-color: #940670; color: #ffffff;">62</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Bethlehem</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2462bop00_excpetion_calendar_00_62_0_noregularservicedays.html" data-route-ids="2462">
+                <div class="route-color-swatch-large" style="background-color: #940670; color: #ffffff;">62</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Bethlehem</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/246200000111_62_1_sat-sun.html"
+                data-route-ids="2462">
+                <div class="route-color-swatch-large" style="background-color: #940670; color: #ffffff;">62</div>
+                <div>
+                    <div class="timetable-page-label">Bethlehem - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/246211111001_62_1_mon-fri.html"
+                data-route-ids="2462">
+                <div class="route-color-swatch-large" style="background-color: #940670; color: #ffffff;">62</div>
+                <div>
+                    <div class="timetable-page-label">Bethlehem - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link"
+                href="timetables/2462bop00_excpetion_calendar_01_62_1_noregularservicedays.html" data-route-ids="2462">
+                <div class="route-color-swatch-large" style="background-color: #940670; color: #ffffff;">62</div>
+                <div>
+                    <div class="timetable-page-label">Bethlehem - Tauranga City</div>
+                    <div class="badge-gray">No regular service days</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/2472100000110_72a_0_sat-sun.html"
+                data-route-ids="24721">
+                <div class="route-color-swatch-large" style="background-color: #d60d8c; color: #ffffff;">72a</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Brookfield</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/2472111111000_72a_0_mon-fri.html"
+                data-route-ids="24721">
+                <div class="route-color-swatch-large" style="background-color: #d60d8c; color: #ffffff;">72a</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Brookfield</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/2472100000111_72a_1_sat-sun.html"
+                data-route-ids="24721">
+                <div class="route-color-swatch-large" style="background-color: #d60d8c; color: #ffffff;">72a</div>
+                <div>
+                    <div class="timetable-page-label">Brookfield - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/2472111111001_72a_1_mon-fri.html"
+                data-route-ids="24721">
+                <div class="route-color-swatch-large" style="background-color: #d60d8c; color: #ffffff;">72a</div>
+                <div>
+                    <div class="timetable-page-label">Brookfield - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/2472200000110_72b_0_sat-sun.html"
+                data-route-ids="24722">
+                <div class="route-color-swatch-large" style="background-color: #d60d8c; color: #ffffff;">72b</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Brookfield</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/2472211111000_72b_0_mon-fri.html"
+                data-route-ids="24722">
+                <div class="route-color-swatch-large" style="background-color: #d60d8c; color: #ffffff;">72b</div>
+                <div>
+                    <div class="timetable-page-label">Tauranga City - Brookfield</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/2472200000111_72b_1_sat-sun.html"
+                data-route-ids="24722">
+                <div class="route-color-swatch-large" style="background-color: #d60d8c; color: #ffffff;">72b</div>
+                <div>
+                    <div class="timetable-page-label">Brookfield - Tauranga City</div>
+                    <div class="badge-gray">Sat-Sun</div>
+                </div>
+            </a><a class="timetable-page-link" href="20250428-20260402/2472211111001_72b_1_mon-fri.html"
+                data-route-ids="24722">
+                <div class="route-color-swatch-large" style="background-color: #d60d8c; color: #ffffff;">72b</div>
+                <div>
+                    <div class="timetable-page-label">Brookfield - Tauranga City</div>
+                    <div class="badge-gray">Mon-Fri</div>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+    <script>
+    // Service Worker 注册
+    if ("serviceWorker" in navigator) {
+
+      navigator.serviceWorker
+        .register("./service-worker.js")
+        .then((registration) => {
+
+          registration.addEventListener("updatefound", () => {
+            const newWorker = registration.installing;
+            newWorker.addEventListener("statechange", () => {
+              if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+
+                {
+                  newWorker.postMessage({ action: "skipWaiting" });
+                }
+              }
+            });
+          });
+        })
+        .catch((err) => console.error("Timetables: Service Worker registration failed:", err));
+
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+
+        window.location.reload();
+      });
+
+      navigator.serviceWorker.addEventListener("message", (event) => {
+        if (event.data && event.data.action === "skipWaiting") {
+
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

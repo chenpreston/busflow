@@ -1,4 +1,4 @@
-const CACHE_NAME = "driver-helper-cache-v0.4.2"; // 更新缓存时修改版本号
+const CACHE_NAME = "driver-helper-cache-v0.4.4"; // 更新缓存时修改版本号
 const CACHE_PREFIX = CACHE_NAME.split("-v")[0]; // 提取前缀
 
 const urlsToCache = [
@@ -16,6 +16,7 @@ const urlsToCache = [
   "./assets/icons/route.svg",
   "./assets/icons/coins.svg",
   "./assets/icons/child.svg",
+  "./assets/icons/time.svg",
 ];
 
 // 安装事件

@@ -55,11 +55,11 @@ ul {
     padding: 0;
 }
 li {
-    list-style-type: "*" !important;
+    list-style-type: "-" !important;
     margin-bottom: 0.5em;
     padding: 0.2em;
 }
-#whats-new, #help, #comments {
+#whats-new, #help, #comments, #thanks {
     margin-bottom: 3em;
     border: #000 solid 0.1em;
     padding: 1em;
@@ -199,7 +199,7 @@ button:hover {
 
 li {
     margin: 0;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 #routes-and-stops {
     margin-top: 3em;
