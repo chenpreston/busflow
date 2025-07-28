@@ -42,60 +42,122 @@
     </div>
         <img src="./svgs/truck-pickup.svg" width="50">
         <div id="whats-new">
-            <h2>What's new?</h2>
-            <ul>
-              <!--  <img id="smallBusFlowLogo" src="./svgs/driver.svg" width="20">
-                <li>Removed Google Analytics codes.</li>
-                <li>Removed all update confirmation.</li>
-                <li>Now use Font Awesome icons as buttons in the navigation bar.</li>
-                <li>New app icon. (Delete and reinstall BusFlow if you don't see the "BF" new icon.)</li>
-                <li>CSS now uses relative units.</li>
-<li>Adapted for devices with DPR=1. (For Hajime)</li>
-<li>Fixed the app name after PWA installation.</li>
-            </ul> -->
-            <ul>
-                <img src="./svgs/time.svg" width="25">
-                <p class="update-date-p">24-07-2025</p>
-                <li>Timetable inquiry is now available.</li>
-            </ul>
-            <ul> 
-                <img src="./svgs/coins.svg" width="20">
-                <p class="update-date-p">24-07-2025</p>
-                <li>"Cash" - This function has been removed.</li>
-            </ul>
-            <ul>
-                <img src="./svgs/shift.svg" width="20">
-                <p class="update-date-p">23-06-2025</p>
-                <li>The school holiday shift database has been updated to Jun 30th, 2025.</li>
-                <img src="./svgs/shift.svg" width="20">
-                <p class="update-date-p">01-05-2025</p>          
-                <li>The school term weekdays and weekends shift database has been updated to April 28th, 2025.</li>
-            </ul>
-            <ul>
-                <img src="./svgs/route.svg" width="20">
-                <p class="update-date-p">01-05-2025</p>
-                <li>Add a map layer that displays all the bus stops in the Bay of Plenty, turned off by default.</li>
-                <li>Remove the previous school bus route search bar. Now, merge it into a single search bar and add a button to clear the content within the search bar.</li>
-                <li>Now it's possible to search all Bay of Plenty bus routes.</li>
-                <li>The route database has been updated to April 28th, 2025.</li>
-            </ul>
-            <ul>
-            <!--    <img src="./svgs/counting.svg" width="20">
-                <li>Add a new feature called "Count Helper" to record the number of school bus students.</li>
-            </ul> -->
-            <ul> 
-                <img src="./svgs/coins.svg" width="20">
-                <p class="update-date-p">10-05-2025</p>
-                <li>Other top-up amounts can be less than 5 and can be negative numbers.</li>
-            </ul>
-          <!--  <ul>
-                <img src="./svgs/about.svg" width="20">
-                <li>Adjust the layout of the About page.</li>
-                <li>shields.io badges removed.</li>
-                <li>New "How to install?" Section.</li>
-                <li>Add 2 PDF files for installation guide.</li>
-                <li>Add a Comment function.</li>
-            </ul> -->
+<h2>What's New</h2>
+  <h3>24/07/2025</h3>
+  <ul>
+    <li>Added <strong>Timetables</strong> module for viewing Tauranga bus timetables (replacing CASH Helper).</li>
+    <li>Removed <strong>CASH Helper</strong>.</li>
+  </ul>
+
+  <h3>23/06/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: Updated School Holiday Shift data to June 2025.</li>
+  </ul>
+
+  <h3>01/05/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: Updated School Term Shift data to April 2025.</li>
+    <li><strong>ROUTE Helper</strong>:
+      <ul>
+        <li>Added map layer for all Bay of Plenty bus stops (disabled by default).</li>
+        <li>Merged school and urban route search boxes into a single input.</li>
+        <li>Added button to clear search field.</li>
+        <li>Updated route data to April 2025.</li>
+      </ul>
+    </li>
+    <li><strong>CASH Helper</strong>: "Other" input now supports values below $5 and negative amounts.</li>
+  </ul>
+
+  <h3>03/04/2025</h3>
+  <ul>
+    <li><strong>SHIFT/ROUTE/COUNTING/CASH/ABOUT</strong>: Switched to relative CSS units and added support for DPR=1 displays.</li>
+    <li><strong>BusFlow</strong>: Fixed app name display issue when installed on home screen.</li>
+    <li><strong>ABOUT Page</strong>:
+      <ul>
+        <li>Added “How to install?” section with Android and iOS installation guides (PDF).</li>
+        <li>Adjusted BusFlow logo background.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>25/03/2025</h3>
+  <ul>
+    <li><strong>BusFlow</strong>: Renamed the app to BusFlow; updated icons, animations, and navigation with Font Awesome.</li>
+    <li><strong>SHIFT Helper</strong>: Added instruction text and repositioned School Holiday switch; fixed PWA caching.</li>
+    <li><strong>ROUTE Helper</strong>: Added keyword-based route search and OpenMoji bus icons; improved caching.</li>
+    <li><strong>COUNTING Helper</strong>: New module for counting school bus students (local storage).</li>
+    <li><strong>CASH Helper</strong>: New module for logging fare collection (locally saved).</li>
+    <li><strong>ABOUT Page</strong>: Added dynamic shields.io badges for module versions and improved layout.</li>
+  </ul>
+
+  <h3>21/03/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: Now part of DRIVER Helper. Removed About and Feedback buttons; cleaned up code and manifest.</li>
+    <li><strong>ABOUT Page</strong>: Split into a standalone project with info, data versions, and feedback form.</li>
+  </ul>
+
+  <h3>20/03/2025</h3>
+  <ul>
+    <li><strong>DRIVER Helper</strong>: Introduced iframe-based modular navigation with icons from OpenMoji.</li>
+    <li><strong>ROUTE Helper</strong>: Initial public release with route search, playback, and map view (via Leaflet and OpenStreetMap).</li>
+  </ul>
+
+  <h3>10/03/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>:
+      <ul>
+        <li>Fixed Holiday switch resetting all shifts instead of just the selected date.</li>
+        <li>Added bulk shift assignment with multi-date selection and smart logic for weekdays/weekends.</li>
+        <li>Added A/C toggle, reset shift/holiday switches, and confirmation prompts.</li>
+        <li>Rewrote README with multilingual support and clearer instructions.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>09/03/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: Set date picker default to today, fixed missing holiday options, and launched macOS tool shiftPDF-CSV for rapid database updates.</li>
+  </ul>
+
+  <h3>08/03/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: Replaced CDN with local PapaParse; added Feedback form, License and README links, and Google Analytics.</li>
+  </ul>
+
+  <h3>07/03/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: Fixed version number display.</li>
+  </ul>
+
+  <h3>06/03/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: Version info moved to main page; added Standby options; grouped shifts with fieldsets.</li>
+  </ul>
+
+  <h3>04/03/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: Shift data moved to CSV; complex shifts now generate multiple calendar events; completed missing holiday shift data.</li>
+  </ul>
+
+  <h3>23/02/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: Improved caching strategy and fixed minor text issues.</li>
+  </ul>
+
+  <h3>22/02/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: Shift data modularised; new colour theme; added About page and caching improvements.</li>
+  </ul>
+
+  <h3>21/02/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: HTML/JS version released with PWA offline support and holiday data. Unified language and app branding.</li>
+  </ul>
+
+  <h3>13/02/2025</h3>
+  <ul>
+    <li><strong>SHIFT Helper</strong>: iOS prototype completed; project named “SHIFT Helper”.</li>
+  </ul>
         </div>
        
         <img src="./svgs/truck.svg" width="50">
@@ -114,7 +176,7 @@
                 </ul>
             </fieldset>
             <fieldset id="routes-and-stops">
-                <legend>ROUTES & STOPS:</legend>
+                <legend>ROUTES, STOPS and TIMETABLES:</legend>
                 <ul>
                     <li><a href="https://www.baybus.co.nz/help-and-contact/general-transit-feed-specification/"
                             target="_blank">GTFS File April 2025</a>
