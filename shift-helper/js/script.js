@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 添加到日历（保持不变）
+  // 添加到日历
   addToCalendarButton.addEventListener("click", async function () {
 
     await initData();
@@ -523,10 +523,20 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // --- 核心修正点 1: 获取正确的年份 ---
+    const weekStartDateValue = document.getElementById("week-start-date").value;
+    if (!weekStartDateValue) {
+        console.error("未选择周起始日期！");
+        return;
+    }
+    const selectedYear = new Date(weekStartDateValue).getFullYear(); 
+    // ------------------------------------
+
     const shiftEvents = [];
     scheduleRows.forEach((row) => {
-      const dateCell = row.querySelectorAll("td")[0];
-      const shiftCell = row.querySelectorAll("td")[1];
+      // 修正：根据 index.html (td[0] 是日期, td[1] 是 Shift Selector)
+      const dateCell = row.querySelectorAll("td")[0]; // Date (DD/MM)
+      const shiftCell = row.querySelectorAll("td")[1]; // Shift Selector
       if (!dateCell || !shiftCell) return;
 
       const dateText = dateCell.textContent.trim();
@@ -535,30 +545,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const selectedShiftValue = shiftSelector.value;
       if (selectedShiftValue) {
-        shiftEvents.push({ date: dateText, shiftCode: selectedShiftValue });
+        // --- 核心修正点 2: 将年份存储在 event 对象中 ---
+        shiftEvents.push({ date: dateText, shiftCode: selectedShiftValue, year: selectedYear });
       }
     });
 
     let icsContent = "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//SHIFT Helper//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\n";
 
     shiftEvents.forEach((event) => {
-      const { shiftCode, date } = event;
+      // --- 核心修正点 3: 从 event 对象中解构出 year ---
+      const { shiftCode, date, year } = event; 
       const shiftDetails = shiftDetailsDictionary[shiftCode];
       if (!shiftDetails || shiftCode === "OFF" || shiftCode === "") return;
 
       const { signOn1, signOff1, signOn2, signOff2, mealLocation, mealStart, mealFinish, mealDuration } = shiftDetails;
 
       if (signOn2 === "none" && mealLocation !== "none") {
-        icsContent += generateEvent(`${shiftCode} part 1`, date, signOn1, mealStart);
-        icsContent += generateEvent(`Meal at ${mealLocation} ${mealDuration}`, date, mealStart, mealFinish);
-        icsContent += generateEvent(`${shiftCode} part 2`, date, mealFinish, signOff1);
+        // --- 核心修正点 4: 传递 year 给 generateEvent ---
+        icsContent += generateEvent(`${shiftCode} part 1`, date, signOn1, mealStart, year);
+        icsContent += generateEvent(`Meal at ${mealLocation} ${mealDuration}`, date, mealStart, mealFinish, year);
+        icsContent += generateEvent(`${shiftCode} part 2`, date, mealFinish, signOff1, year);
       } else if (signOn2 !== "none" && signOff2 !== "none") {
-        icsContent += generateEvent(`${shiftCode} AM`, date, signOn1, signOff1);
+        // --- 核心修正点 4: 传递 year 给 generateEvent ---
+        icsContent += generateEvent(`${shiftCode} AM`, date, signOn1, signOff1, year);
         const gapDuration = calculateGap(signOff1, signOn2);
-        icsContent += generateEvent(`GAP ${gapDuration}`, date, signOff1, signOn2);
-        icsContent += generateEvent(`${shiftCode} PM`, date, signOn2, signOff2);
+        icsContent += generateEvent(`GAP ${gapDuration}`, date, signOff1, signOn2, year);
+        icsContent += generateEvent(`${shiftCode} PM`, date, signOn2, signOff2, year);
       } else if (signOn2 === "none" && mealLocation === "none") {
-        icsContent += generateEvent(shiftCode, date, signOn1, signOff1);
+        // --- 核心修正点 4: 传递 year 给 generateEvent ---
+        icsContent += generateEvent(shiftCode, date, signOn1, signOff1, year);
       }
     });
 
@@ -574,10 +589,14 @@ document.addEventListener("DOMContentLoaded", function () {
   
   });
 
-  function generateEvent(summary, dateText, startTime, endTime) {
+  // 修正 generateEvent 函数签名以接收年份
+  function generateEvent(summary, dateText, startTime, endTime, year) { 
     if (startTime === "none" || endTime === "none") return "";
-    const startDateTime = createUTCDateFromDateTextAndTime(dateText, startTime);
-    const endDateTime = createUTCDateFromDateTextAndTime(dateText, endTime);
+    
+    // 关键修正：传递 year 给 createUTCDateFromDateTextAndTime
+    const startDateTime = createUTCDateFromDateTextAndTime(dateText, startTime, year); 
+    const endDateTime = createUTCDateFromDateTextAndTime(dateText, endTime, year);
+
     if (!startDateTime || !endDateTime) return "";
 
     const uid = generateUuid();

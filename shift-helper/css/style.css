@@ -41,12 +41,10 @@ h1 {
   color: #333;
 }
 
-/* #version {
-  
-  padding: 0;
-  
-  margin-bottom: 0;
-  
+#version {
+  padding: 0em;
+  font-size: 0.8em;
+  color: #777;
 } */
 
 /*
