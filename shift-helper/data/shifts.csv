@@ -1,88 +1,13 @@
 shift,signOn1,signOff1,signOn2,signOff2,mealLocation,mealStart,mealFinish,mealDuration
-T26301H,05:30,15:14,none,none,Tauranga CBD,10:58,11:29,31 minutes
-T26302H,09:51,19:49,none,none,Tauranga CBD,14:44,15:19,35 minutes
-T26303H,05:40,14:56,none,none,Tauranga CBD,09:58,10:34,36 minutes
-T26304H,10:21,20:10,none,none,Tauranga CBD,14:54,15:44,50 minutes
-T26305H,06:02,15:39,none,none,Tauranga CBD,11:08,11:59,51 minutes
-T26306H,10:34,20:34,none,none,Tauranga CBD,14:38,15:11,33 minutes
-T26307H,05:47,15:10,none,none,Tauranga CBD,08:53,09:41,48 minutes
-T26308H,10:38,20:38,none,none,Tauranga CBD,15:52,16:34,42 minutes
-T26309H,05:48,15:39,none,none,Tauranga CBD,09:54,10:34,40 minutes
-T26310H,10:40,20:40,none,none,Tauranga CBD,14:38,15:24,46 minutes
-T26311H,05:53,15:44,none,none,Tauranga CBD,11:18,11:59,41 minutes
-T26312H,10:44,20:44,none,none,Tauranga CBD,15:24,15:56,32 minutes
-T26313H,05:57,15:26,none,none,Tauranga CBD,09:23,09:59,36 minutes
-T26314H,10:59,20:48,none,none,Tauranga CBD,15:24,16:04,40 minutes
-T26315H,05:58,15:20,none,none,Tauranga CBD,10:34,11:11,37 minutes
-T26316H,10:59,20:55,none,none,Tauranga CBD,16:23,16:59,36 minutes
-T26317H,06:01,16:01,none,none,Tauranga CBD,11:09,11:41,32 minutes
-T26318H,11:08,21:02,none,none,Tauranga CBD,15:23,15:54,31 minutes
-T26319H,06:16,16:14,none,none,Tauranga CBD,10:29,10:59,30 minutes
-T26320H,11:09,21:09,none,none,Tauranga CBD,16:07,16:38,31 minutes
-T26321H,06:30,16:26,none,none,Tauranga CBD,10:51,11:24,33 minutes
-T26322H,11:19,21:14,none,none,Tauranga CBD,15:04,15:49,45 minutes
-T26323H,06:44,16:39,none,none,Tauranga CBD,11:24,11:54,30 minutes
-T26324H,11:21,21:18,none,none,Tauranga CBD,15:39,16:22,43 minutes
-T26325H,07:41,17:10,none,none,Tauranga CBD,12:58,13:44,46 minutes
-T26326H,11:29,21:29,none,none,Tauranga CBD,15:59,16:30,31 minutes
-T26328H,11:38,21:38,none,none,Tauranga CBD,16:38,17:09,31 minutes
-T26330H,11:39,21:26,none,none,Tauranga CBD,16:18,16:49,31 minutes
-T26332H,11:51,21:48,none,none,Tauranga CBD,16:09,16:43,34 minutes
-T26334H,11:59,21:44,none,none,Tauranga CBD,15:53,16:24,31 minutes
-T26336H,12:24,21:55,none,none,Tauranga CBD,16:37,17:34,57 minutes
-T26338H,12:34,22:25,none,none,Tauranga CBD,17:28,18:04,36 minutes
-T26501H,05:34,09:43,12:39,18:01,none,none,none,none
-T26502H,05:42,11:05,14:04,18:38,none,none,none,none
-T26503H,05:45,10:33,13:19,18:30,none,none,none,none
-T26504H,05:46,10:21,13:21,18:41,none,none,none,none
-T26505H,06:00,11:20,14:09,18:44,none,none,none,none
-T26506H,06:00,11:24,14:34,18:59,none,none,none,none
-T26507H,06:10,11:33,14:38,19:10,none,none,none,none
-T26508H,06:14,11:36,14:44,19:14,none,none,none,none
-T26509H,06:20,11:09,13:59,19:08,none,none,none,none
-T26510H,06:21,11:39,14:39,19:21,none,none,none,none
-T26511H,06:29,11:54,15:19,19:25,none,none,none,none
-T26512H,06:32,11:50,14:50,19:24,none,none,none,none
-T26513H,06:38,12:04,15:04,19:34,none,none,none,none
-T26514H,06:38,11:11,14:21,19:36,none,none,none,none
-T26515H,06:41,11:51,14:34,19:24,none,none,none,none
-T26516H,06:41,11:56,14:51,19:31,none,none,none,none
-T26517H,06:45,12:03,15:08,19:35,none,none,none,none
-T26518H,06:56,12:05,15:09,19:50,none,none,none,none
-T26519H,06:59,12:20,15:29,19:38,none,none,none,none
-T26520H,06:59,12:21,15:51,19:48,none,none,none,none
-T26521H,07:29,12:15,15:04,20:08,none,none,none,none
-T26522H,07:31,12:09,15:25,20:08,none,none,none,none
-T26523H,07:34,13:04,16:13,20:33,none,none,none,none
-T26524H,08:21,12:55,16:06,20:54,none,none,none,none
-T26525H,08:31,13:05,15:38,20:54,none,none,none,none
-T26526H,09:29,14:14,15:44,20:24,none,none,none,none
-T26527H,07:29,09:30,none,none,none,none,none,none
-T28301H,05:29,15:09,none,none,Tauranga CBD,09:53,10:29,36 minutes
-T28302H,11:01,20:27,none,none,Tauranga CBD,14:23,15:04,41 minutes
-T28303H,05:41,15:29,none,none,Tauranga CBD,09:22,10:04,42 minutes
-T28304H,11:31,20:57,none,none,Tauranga CBD,14:53,15:39,46 minutes
-T28305H,05:59,15:59,none,none,Tauranga CBD,10:38,11:19,41 minutes
-T28307H,06:11,15:46,none,none,Tauranga CBD,10:24,11:04,40 minutes
-T28309H,06:14,16:06,none,none,Tauranga CBD,10:54,11:44,50 minutes
-T28311H,06:29,16:17,none,none,Tauranga CBD,11:36,12:06,30 minutes
-T28313H,06:39,16:26,none,none,Tauranga CBD,10:22,11:06,44 minutes
-T28315H,06:41,16:31,none,none,Tauranga CBD,11:58,12:41,43 minutes
-T28317H,06:44,16:31,none,none,Tauranga CBD,11:34,12:04,30 minutes
-T28319H,07:09,17:02,none,none,Tauranga CBD,12:04,12:34,30 minutes
-T28321H,07:29,17:29,none,none,Tauranga CBD,12:22,13:04,42 minutes
-T28323H,08:45,18:36,none,none,Tauranga CBD,14:07,14:41,34 minutes
-T28501H,06:59,11:38,15:29,19:57,none,none,none,none
-T28602H,16:37,21:27,none,none,none,none,none,none
 T26301T,05:16,14:39,none,none,Tauranga CBD,10:04,10:34,30 minutes
 T26302T,10:34,20:33,none,none,Tauranga CBD,14:18,15:07,49 minutes
 T26303T,05:30,15:09,none,none,Tauranga CBD,09:54,10:24,30 minutes
 T26304T,10:38,20:31,none,none,Tauranga CBD,14:04,15:04,60 minutes
-T26305T,05:34,14:24,none,none,Tauranga CBD,08:29,08:59,30 minutes
+T26305T,05:52,14:24,none,none,Tauranga CBD,08:29,08:59,30 minutes
 T26306T,10:44,20:40,none,none,Tauranga CBD,14:36,15:11,35 minutes
 T26307T,05:40,15:11,none,none,Tauranga CBD,10:51,11:24,33 minutes
 T26308T,10:44,20:44,none,none,Tauranga CBD,14:54,15:34,40 minutes
-T26309T,05:41,15:01,none,none,Tauranga CBD,10:56,11:41,45 minutes
+T26309T,05:34,15:01,none,none,Tauranga CBD,10:56,11:41,45 minutes
 T26310T,10:51,19:50,none,none,Tauranga CBD,13:53,14:24,31 minutes
 T26311T,05:45,14:56,none,none,Greerton Depot,09:09,09:56,47 minutes
 T26312T,10:54,20:54,none,none,Tauranga CBD,15:39,16:26,47 minutes
@@ -175,7 +100,7 @@ T27319T,07:11,08:40,14:29,16:19,none,none,none,none
 T27321T,07:11,08:53,14:47,16:38,none,none,none,none
 T27323T,07:14,08:42,14:22,16:27,none,none,none,none
 T27325T,07:15,08:36,14:34,16:10,none,none,none,none
-T27327T,07:17,08:37,13:06,16:19,none,none,none,none
+T27327T,07:17,09:12,13:41,16:19,none,none,none,none
 T27329T,07:18,08:40,14:29,16:29,none,none,none,none
 T27331T,07:20,08:44,14:44,16:33,none,none,none,none
 T27333T,07:20,08:44,14:44,16:33,none,none,none,none
@@ -185,8 +110,8 @@ T27339T,07:23,09:01,14:25,16:14,none,none,none,none
 T27341T,07:24,08:36,14:34,16:14,none,none,none,none
 T27343T,07:25,08:45,14:39,16:16,none,none,none,none
 T27345T,07:25,08:57,14:57,16:33,none,none,none,none
-T27347T,07:25,08:57,14:57,16:33,none,none,none,none
-T27349T,07:28,08:59,14:59,16:31,none,none,none,none
+T27347T,07:25,08:57,14:56,16:32,none,none,none,none
+T27349T,07:28,08:59,14:58,16:30,none,none,none,none
 T27351T,07:29,08:49,14:49,16:31,none,none,none,none
 T27353T,07:30,08:58,14:43,16:43,none,none,none,none
 T27355T,07:31,09:20,14:17,16:41,none,none,none,none
@@ -196,6 +121,81 @@ T27361T,07:39,08:46,14:38,16:20,none,none,none,none
 T27363T,06:56,08:51,14:21,16:41,none,none,none,none
 T27365T,12:10,16:10,none,none,none,none,none,none
 T27367T,12:38,16:38,none,none,none,none,none,none
+T26301H,05:30,15:14,none,none,Tauranga CBD,10:58,11:29,31 minutes
+T26302H,09:51,19:49,none,none,Tauranga CBD,14:44,15:19,35 minutes
+T26303H,05:40,14:56,none,none,Tauranga CBD,09:58,10:34,36 minutes
+T26304H,10:21,20:10,none,none,Tauranga CBD,14:54,15:44,50 minutes
+T26305H,06:02,15:39,none,none,Tauranga CBD,11:08,11:59,51 minutes
+T26306H,10:34,20:34,none,none,Tauranga CBD,14:38,15:11,33 minutes
+T26307H,05:47,15:10,none,none,Tauranga CBD,08:53,09:41,48 minutes
+T26308H,10:38,20:38,none,none,Tauranga CBD,15:52,16:34,42 minutes
+T26309H,05:48,15:39,none,none,Tauranga CBD,09:54,10:34,40 minutes
+T26310H,10:40,20:40,none,none,Tauranga CBD,14:38,15:24,46 minutes
+T26311H,05:53,15:44,none,none,Tauranga CBD,11:18,11:59,41 minutes
+T26312H,10:44,20:44,none,none,Tauranga CBD,15:24,15:56,32 minutes
+T26313H,05:57,15:26,none,none,Tauranga CBD,09:23,09:59,36 minutes
+T26314H,10:59,20:48,none,none,Tauranga CBD,15:24,16:04,40 minutes
+T26315H,05:58,15:20,none,none,Tauranga CBD,10:34,11:11,37 minutes
+T26316H,10:59,20:55,none,none,Tauranga CBD,16:23,16:59,36 minutes
+T26317H,06:01,16:01,none,none,Tauranga CBD,11:09,11:41,32 minutes
+T26318H,11:08,21:02,none,none,Tauranga CBD,15:23,15:54,31 minutes
+T26319H,06:16,16:14,none,none,Tauranga CBD,10:29,10:59,30 minutes
+T26320H,11:09,21:09,none,none,Tauranga CBD,16:07,16:38,31 minutes
+T26321H,06:30,16:26,none,none,Tauranga CBD,10:51,11:24,33 minutes
+T26322H,11:19,21:14,none,none,Tauranga CBD,15:04,15:49,45 minutes
+T26323H,06:44,16:39,none,none,Tauranga CBD,11:24,11:54,30 minutes
+T26324H,11:21,21:18,none,none,Tauranga CBD,15:39,16:22,43 minutes
+T26325H,07:41,17:10,none,none,Tauranga CBD,12:58,13:44,46 minutes
+T26326H,11:29,21:29,none,none,Tauranga CBD,15:59,16:30,31 minutes
+T26328H,11:38,21:38,none,none,Tauranga CBD,16:38,17:09,31 minutes
+T26330H,11:39,21:26,none,none,Tauranga CBD,16:18,16:49,31 minutes
+T26332H,11:51,21:48,none,none,Tauranga CBD,16:09,16:43,34 minutes
+T26334H,11:59,21:44,none,none,Tauranga CBD,15:53,16:24,31 minutes
+T26336H,12:24,21:55,none,none,Tauranga CBD,16:37,17:34,57 minutes
+T26338H,12:34,22:25,none,none,Tauranga CBD,17:28,18:04,36 minutes
+T26501H,05:34,09:43,12:39,18:01,none,none,none,none
+T26502H,05:42,11:05,14:04,18:38,none,none,none,none
+T26503H,05:45,10:33,13:19,18:30,none,none,none,none
+T26504H,05:46,10:21,13:21,18:41,none,none,none,none
+T26505H,06:00,11:20,14:09,18:44,none,none,none,none
+T26506H,06:00,11:24,14:34,18:59,none,none,none,none
+T26507H,06:10,11:33,14:38,19:10,none,none,none,none
+T26508H,06:14,11:36,14:44,19:14,none,none,none,none
+T26509H,06:20,11:09,13:59,19:08,none,none,none,none
+T26510H,06:21,11:39,14:39,19:21,none,none,none,none
+T26511H,06:29,11:54,15:19,19:25,none,none,none,none
+T26512H,06:32,11:50,14:50,19:24,none,none,none,none
+T26513H,06:38,12:04,15:04,19:34,none,none,none,none
+T26514H,06:38,11:11,14:21,19:36,none,none,none,none
+T26515H,06:41,11:51,14:34,19:24,none,none,none,none
+T26516H,06:41,11:56,14:51,19:31,none,none,none,none
+T26517H,06:45,12:03,15:08,19:35,none,none,none,none
+T26518H,06:56,12:05,15:09,19:50,none,none,none,none
+T26519H,06:59,12:20,15:29,19:38,none,none,none,none
+T26520H,06:59,12:21,15:51,19:48,none,none,none,none
+T26521H,07:29,12:15,15:04,20:08,none,none,none,none
+T26522H,07:31,12:09,15:25,20:08,none,none,none,none
+T26523H,07:34,13:04,16:13,20:33,none,none,none,none
+T26524H,08:21,12:55,16:06,20:54,none,none,none,none
+T26525H,08:31,13:05,15:38,20:54,none,none,none,none
+T26526H,09:29,14:14,15:44,20:24,none,none,none,none
+T26527H,07:29,09:30,none,none,none,none,none,none
+T28301H,05:29,15:09,none,none,Tauranga CBD,09:53,10:29,36 minutes
+T28302H,11:01,20:27,none,none,Tauranga CBD,14:23,15:04,41 minutes
+T28303H,05:41,15:29,none,none,Tauranga CBD,09:22,10:04,42 minutes
+T28304H,11:31,20:57,none,none,Tauranga CBD,14:53,15:39,46 minutes
+T28305H,05:59,15:59,none,none,Tauranga CBD,10:38,11:19,41 minutes
+T28307H,06:11,15:46,none,none,Tauranga CBD,10:24,11:04,40 minutes
+T28309H,06:14,16:06,none,none,Tauranga CBD,10:54,11:44,50 minutes
+T28311H,06:29,16:17,none,none,Tauranga CBD,11:36,12:06,30 minutes
+T28313H,06:39,16:26,none,none,Tauranga CBD,10:22,11:06,44 minutes
+T28315H,06:41,16:31,none,none,Tauranga CBD,11:58,12:41,43 minutes
+T28317H,06:44,16:31,none,none,Tauranga CBD,11:34,12:04,30 minutes
+T28319H,07:09,17:02,none,none,Tauranga CBD,12:04,12:34,30 minutes
+T28321H,07:29,17:29,none,none,Tauranga CBD,12:22,13:04,42 minutes
+T28323H,08:45,18:36,none,none,Tauranga CBD,14:07,14:41,34 minutes
+T28501H,06:59,11:38,15:29,19:57,none,none,none,none
+T28602H,16:37,21:27,none,none,none,none,none,none
 T26701,06:13,17:56,none,none,Tauranga CBD,11:37,12:34,57 minutes
 T26702,09:25,20:50,none,none,Greerton Depot,14:39,15:27,48 minutes
 T26703,06:13,18:05,none,none,Greerton Depot,11:40,12:40,60 minutes
